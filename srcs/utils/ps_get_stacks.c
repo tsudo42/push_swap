@@ -6,7 +6,7 @@
 /*   By: tsudo <tsudo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 13:15:36 by tsudo             #+#    #+#             */
-/*   Updated: 2022/03/06 13:52:05 by tsudo            ###   ##########        */
+/*   Updated: 2022/03/22 19:21:46 by tsudo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	ps_store_ints(int argc, const char **argv, int *stack, int *size)
 		{
 			if (!ft_isintstr(numstrs[j]))
 				ok = 0;
-			stack[(*size)++] = atoi(numstrs[j]);
+			stack[(*size)++] = ft_atoi(numstrs[j]);
 			free(numstrs[j++]);
 		}
 		free(numstrs);
