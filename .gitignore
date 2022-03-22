@@ -1,0 +1,31 @@
+# exectables
+/push_swap
+/checker
+/checker_linux
+/checker_Mac
+
+# C
+*.a
+*.o
+*.d
+*.out
+tags
+
+# Tempolary files
+tmp*.c
+
+# Config files
+.vscode
+.DS_Store
+*.dSYM
+
+# Other files
+*.log
+*.txt
+*.py
+*.bk
+*.cpp
+*.md
+
+# Other directory
+/push_swap_tester
