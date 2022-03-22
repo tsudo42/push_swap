@@ -6,14 +6,14 @@
 #    By: tsudo <tsudo@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/05 23:50:33 by tsudo             #+#    #+#              #
-#    Updated: 2022/03/14 15:47:33 by tsudo            ###   ##########         #
+#    Updated: 2022/03/22 19:11:18 by tsudo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= push_swap
 B_NAME	:= checker
 CC		:= gcc
-CFLAGS	:= -Wall -Wextra -Werror -MMD -MP -g -fsanitize=address
+CFLAGS	:= -Wall -Wextra -Werror -MMD -MP
 RM		:= rm -f
 LIBFT	:= libft/libft.a
 
