@@ -37,7 +37,7 @@ char	*ps_store_str(const char *str)
 	if (str == NULL)
 		return (ps_store_str_reset(&buf, &size, &ofs));
 	len = ft_strlen(str);
-	while (len + ofs + 1 > size)
+	while (len + 1 > size - ofs)
 	{
 		if (size == 0)
 			size = 16;
@@ -47,7 +47,6 @@ char	*ps_store_str(const char *str)
 		size *= 2;
 	}
 	ft_memcpy(buf + ofs, str, len + 1);
-	ft_strlcpy(buf + ofs, str, size - ofs);
 	ofs += len;
 	return (buf);
 }
