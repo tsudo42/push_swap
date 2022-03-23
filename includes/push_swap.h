@@ -26,6 +26,9 @@ void	ps_bfs_sort(t_push_swap ps);
 void	ps_bfs_sort_4(t_push_swap ps, int tmp);
 void	ps_bfs_sort_5(t_push_swap ps, int tmp);
 
+int		ps_almost_sorted(t_push_swap ps);
+void	ps_small_wheel_sort(t_push_swap ps);
+
 void	ps_bubble_sort(t_push_swap ps);
 void	ps_radix_sort(t_push_swap ps);
 void	ps_smart_wheel(int index_a, int index_b, t_push_swap ps);

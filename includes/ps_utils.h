@@ -50,5 +50,7 @@ t_ps_op		ps_str_to_op(const char *str);
 const char	*ps_op_to_str(t_ps_op op);
 char		*ps_store_str(const char *str);
 void		ps_op_wrapper(t_ps_op op, t_push_swap ps);
+int			ps_min_index(int *arr, int size);
+int			ps_max_index(int *arr, int size);
 
 #endif /* PS_UTILS_H */

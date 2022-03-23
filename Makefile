@@ -31,6 +31,8 @@ M_SRCS	:= \
 	srcs/push_swap/ps_rmdup.c \
 	srcs/push_swap/ps_smart_wheel.c \
 	srcs/push_swap/ps_wheel_sort.c \
+	srcs/push_swap/ps_almost_sorted.c \
+	srcs/push_swap/ps_small_wheel_sort.c \
 
 SRCS	+= $(U_SRCS)
 U_SRCS	:= \
@@ -40,6 +42,7 @@ U_SRCS	:= \
 	srcs/utils/ps_op_str.c \
 	srcs/utils/ps_store_str.c \
 	srcs/utils/push_swap.c \
+	srcs/utils/ps_index.c \
 
 SRCS	+= $(B_SRCS)
 B_SRCS	:= \

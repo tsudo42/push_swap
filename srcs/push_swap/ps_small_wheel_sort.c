@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_merge.c                                         :+:      :+:    :+:   */
+/*   ps_small_wheel_sort.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsudo <tsudo@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 03:00:28 by tsudo             #+#    #+#             */
-/*   Updated: 2022/03/14 14:16:38 by tsudo            ###   ##########        */
+/*   Created: 2022/03/23 16:08:00 by tsudo             #+#    #+#             */
+/*   Updated: 2022/03/23 16:08:40 by tsudo            ###   ##########        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_merge(t_push_swap ps)
+void	ps_small_wheel_sort(t_push_swap ps)
 {
-	int	i;
-	int	*tmp_a;
-	int	size_a;
+	size_t	lis_len;
+	int		count;
+	int		index_a;
 
-	size_a = *ps.size_a;
-	tmp_a = ft_memdup(ps.stack_a, sizeof(int) * size_a);
-	if (tmp_a == NULL)
+	if (*ps.size_a <= 0)
+		return ;
+	count = 0;
+	lis_len = ft_lis_len(ps.stack_a, *ps.size_a);
+	if (lis_len == 0)
 		ft_exit(-1, "Error");
-	i = size_a - 1;
-	while (i >= 0)
+	while ((int)lis_len < *ps.size_a)
 	{
-		ps_smart_wheel(0, ps_max_index(ps.stack_b, *ps.size_b), ps);
-		while (*ps.size_b > 0 && tmp_a[i] < ps.stack_b[0])
-			ps_op_wrapper(PS_PA, ps);
-		if (*ps.size_a > 0)
-			ps_op_wrapper(PS_RRA, ps);
-		i--;
+		index_a = ps_min_index(ps.stack_a, *ps.size_a);
+		ps_smart_wheel(index_a, -1, ps);
+		ps_op_wrapper(PS_PB, ps);
+		count++;
+		lis_len = ft_lis_len(ps.stack_a, *ps.size_a);
+		if (lis_len == 0)
+			ft_exit(-1, "Error");
 	}
-	while (*ps.size_b > 0)
+	while (count > 0)
+	{
 		ps_op_wrapper(PS_PA, ps);
-	free(tmp_a);
+		count--;
+	}
 }

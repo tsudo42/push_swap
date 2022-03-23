@@ -22,6 +22,8 @@ int	main(int argc, char **argv)
 	ps = ps_get_stacks(argc - 1, (const char **)(argv + 1));
 	if (*ps.size_a <= 5)
 		ps_bfs_sort(ps);
+	else if (ps_almost_sorted(ps) == 1)
+		ps_small_wheel_sort(ps);
 	else
 		ps_wheel_sort(ps);
 	str = ps_store_str(NULL);

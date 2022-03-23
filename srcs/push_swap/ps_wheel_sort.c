@@ -106,6 +106,9 @@ void	ps_wheel_sort(t_push_swap ps)
 		ps_op_wrapper(PS_PB, ps);
 		index_a = ps_wheel_sort_helper(ps);
 	}
-	ps_radix_sort(ps);
+	if (ps_almost_sorted(ps) == 1)
+		ps_small_wheel_sort(ps);
+	else
+		ps_radix_sort(ps);
 	ps_merge(ps);
 }
