@@ -44,5 +44,6 @@ typedef struct s_gnl_buf
 }	t_gnl_buf;
 
 char	*get_next_line(int fd);
+char	*get_next_line_easy(int fd);
 
 #endif /* GET_NEXT_LINE_H */

@@ -64,6 +64,7 @@ SRCS_PRINTF		:= \
 SRCS += $(SRCS_GNL)
 SRCS_GNL		:= \
 	srcs/get_next_line/get_next_line.c \
+	srcs/get_next_line/get_next_line_easy.c \
 
 SRCS += $(SRCS_INT)
 SRCS_INT		:= \

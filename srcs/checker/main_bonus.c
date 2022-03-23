@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	if (argc - 1 <= 0)
 		return (0);
 	ps = ps_get_stacks(argc - 1, (const char **)(argv + 1));
-	line = get_next_line(0);
+	line = get_next_line_easy(0);
 	while (line != NULL)
 	{
 		if (push_swap(ps, ps_str_to_op(ft_trimnl(line))) != 0)
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 			exit_with_error();
 		}
 		free(line);
-		line = get_next_line(0);
+		line = get_next_line_easy(0);
 	}
 	exit_with_status(ps);
 }
