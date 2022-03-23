@@ -26,6 +26,7 @@ void	ft_heapsort_int(int *lst, int size);
 int		ft_index(int key, int *arr, int size);
 int		ft_isintstr(const char *str);
 char	*ft_itoa(int n);
+size_t	ft_lis_len(const int *arr, size_t size);
 size_t	ft_lowerbound_int(int key, int *sorted_arr, size_t size);
 size_t	ft_nbrlen(intmax_t n, int base);
 int		ft_numstrcmp(const char *s1, const char *s2);

@@ -73,6 +73,7 @@ SRCS_INT		:= \
 	srcs/int/ft_index.c \
 	srcs/int/ft_isintstr.c \
 	srcs/int/ft_itoa.c \
+	srcs/int/ft_lis_len.c \
 	srcs/int/ft_lowerbound_int.c \
 	srcs/int/ft_nbrlen.c \
 	srcs/int/ft_numstrcmp.c \

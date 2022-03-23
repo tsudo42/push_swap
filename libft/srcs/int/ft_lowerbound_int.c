@@ -15,32 +15,28 @@
 /* ************************************************************************** */
 /*  This function returns the index of key in sorted_arr if exists.           */
 /*  Otherwise, returns idx where sorted_arr[idx-1] < key < sorted_arr[idx].   */
+/*  The idx can be equal to size, when key is bigger than any num in arr, so  */
+/*  be careful using return value as an index of the original arr.            */
 /* ************************************************************************** */
 size_t	ft_lowerbound_int(int key, int *sorted_arr, size_t size)
 {
 	size_t	left;
 	size_t	right;
-	size_t	mid_left;
-	size_t	mid_right;
+	size_t	mid;
 
 	if (size == 0)
 		return (1);
 	left = 0;
-	right = size - 1;
-	while (left <= right)
+	right = size;
+	while (left + 1 < right)
 	{
-		mid_left = (left + right) / 2;
-		mid_right = (left + right + 1) / 2;
-		if (key == sorted_arr[mid_left])
-			return (mid_left);
-		else if (key == sorted_arr[mid_right])
-			return (mid_right);
-		else if (key > sorted_arr[mid_right])
-			left = mid_right + 1;
-		else if (mid_left == 0)
-			break ;
+		mid = left + (right - left) / 2;
+		if (key <= sorted_arr[mid])
+			right = mid;
 		else
-			right = mid_left - 1;
+			left = mid;
 	}
-	return (mid_right + 1);
+	if (left <= right && key <= sorted_arr[left])
+		return (left);
+	return (right);
 }
